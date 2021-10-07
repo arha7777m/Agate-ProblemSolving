@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xInitialForce: 50
-  yInitialForce: 20
+  yInitialForce: 15
 --- !u!50 &12313820
 Rigidbody2D:
   serializedVersion: 4

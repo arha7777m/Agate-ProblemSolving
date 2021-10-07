@@ -203,11 +203,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 12313816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 402cc4a8e79ff4b44b053749257c66e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3595ebaaeffac7f48b5864eea2ccb190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xInitialForce: 50
-  yInitialForce: 15
+  speed: 1000
 --- !u!50 &12313820
 Rigidbody2D:
   serializedVersion: 4
