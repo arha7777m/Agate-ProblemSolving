@@ -10,21 +10,11 @@ public class PlayerMovement : MonoBehaviour
     // Besarnya gaya awal yang diberikan untuk mendorong bola
     public float xInitialForce;
     public float yInitialForce;
-
-    // Titik asal lintasan bola saat ini
-    private Vector2 trajectoryOrigin;
-
-    // Untuk mengakses informasi titik asal lintasan
-    public Vector2 TrajectoryOrigin
-    {
-        get { return trajectoryOrigin; }
-    }
-
+    
     // Start is called before the first frame update
     void Start()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
-        trajectoryOrigin = transform.position;
 
         // Mulai game
         RestartGame();
@@ -32,10 +22,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        //kalo klik R, restart game (keperluan debug aja)
+        //kalo klik R, reset ball (keperluan debug aja)
         if (Input.GetKeyDown(KeyCode.R))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            ResetBall();
         }
     }
 
@@ -69,11 +59,5 @@ public class PlayerMovement : MonoBehaviour
 
         // Setelah 2 detik, berikan gaya ke bola
         Invoke(nameof(PushBall), 2);
-    }
-
-    // Ketika bola beranjak dari sebuah tumbukan, rekam titik tumbukan tersebut
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        trajectoryOrigin = transform.position;
     }
 }
