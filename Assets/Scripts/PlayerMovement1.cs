@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+//skrip input player gerak
+//kiri, kanan, atas, bawah
 public class PlayerMovement1 : MonoBehaviour
 {
     // Rigidbody 2D bola

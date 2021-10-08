@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//skrip player gerak random tanpa input
 public class PlayerMovement : MonoBehaviour
 {
     // Rigidbody 2D bola
