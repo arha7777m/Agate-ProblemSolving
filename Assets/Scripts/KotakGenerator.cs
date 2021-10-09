@@ -2,7 +2,7 @@
 
 public class KotakGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject kotakPrefab;
+    [SerializeField] private GameObject[] kotakPrefab;
     [SerializeField] private float spawnRate = 3f;
 
     private float spawnCounter;
@@ -28,7 +28,13 @@ public class KotakGenerator : MonoBehaviour
 
     private void SpawnBox()
     {
+        //pilih random prefab
+        int index = Random.Range(0, kotakPrefab.Length);
+
+        //kotak akan muncul dalam area border
         Vector3 randomPosition = new Vector3(Random.Range(-8f, 8f), Random.Range(-4.25f, 4.25f));
-        Instantiate(kotakPrefab, randomPosition, Quaternion.identity);
+
+        //munculkan kotak
+        Instantiate(kotakPrefab[index], randomPosition, Quaternion.identity);
     }
 }

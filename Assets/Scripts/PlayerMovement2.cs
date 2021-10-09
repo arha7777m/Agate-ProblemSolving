@@ -8,7 +8,6 @@ public class PlayerMovement2 : MonoBehaviour
 
     //kecepatan player
     public float speed;
-    public float rotationOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -30,13 +29,12 @@ public class PlayerMovement2 : MonoBehaviour
         Vector3 objectPosition = Camera.main.WorldToScreenPoint(transform.position);
         
         //atur jaraknya mouse dengan player
-        mousePosition.x = mousePosition.x - objectPosition.x;
-        mousePosition.y = mousePosition.y - objectPosition.y;
+        mousePosition.x -= objectPosition.x;
+        mousePosition.y -= objectPosition.y;
 
         //gerakin player ke mouse
-        Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        targetPosition.z = 0;
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x, mousePosition.y * speed * Time.deltaTime);
+        rigidBody2D.velocity = new Vector2(mousePosition.x * speed * Time.deltaTime, rigidBody2D.velocity.y);
     }
 
     void ResetBall()
