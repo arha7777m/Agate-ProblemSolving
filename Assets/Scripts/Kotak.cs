@@ -7,7 +7,7 @@ public class Kotak : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             GameManager.Instance.AddScore(1);
-            Destroy(gameObject);
+            Destroy(gameObject);    
         }
     }
 }
