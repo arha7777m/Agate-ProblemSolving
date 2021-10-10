@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5275163669865172289}
   - component: {fileID: 5275163669865172288}
   - component: {fileID: 6114589504730387685}
-  - component: {fileID: 2165502210593724905}
+  - component: {fileID: 6893811574480695585}
+  - component: {fileID: 7469487039593795696}
   m_Layer: 0
-  m_Name: kotak 1
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,9 +70,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2c46b1944bc32b648b2cf440dacfc9e2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -107,7 +108,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
---- !u!114 &2165502210593724905
+--- !u!114 &6893811574480695585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,6 +117,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 5275163669865172319}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dcacf610b7dd734d8d10cfc5ccb4f63, type: 3}
+  m_Script: {fileID: 11500000, guid: 870e3e8710b7cc34a85f6fdc67bc5284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  peluruPrefab: {fileID: 3851434407570794107, guid: fe90266f6fb774443b4b5eade1332c24,
+    type: 3}
+  shootRate: 3
+  speed: 25
+  player: {fileID: 0}
+--- !u!50 &7469487039593795696
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5275163669865172319}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

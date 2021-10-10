@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,14 @@ public class GameManager : MonoBehaviour
         AddScore(0);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartGame();
+        }
+    }
+
     public void AddScore(int amount)
     {
         //tambah skor sebanyak amount
@@ -37,5 +46,22 @@ public class GameManager : MonoBehaviour
 
         //update nilai score pada text
         scoreText.text = score.ToString("0");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Keluar!");
+        Application.Quit();
+    }
+
+    public void RestartGame()
+    {
+        int indexScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(indexScene);
+    }
+
+    public void GoToScene(string nameScene)
+    {
+        SceneManager.LoadScene(nameScene);
     }
 }

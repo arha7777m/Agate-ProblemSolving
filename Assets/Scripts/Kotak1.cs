@@ -5,22 +5,6 @@ using UnityEngine.Events;
 
 public class Kotak1 : MonoBehaviour
 {
-    private static Kotak1 _instance = null;
-    public static Kotak1 Instance
-    {
-        get
-        {
-            if(_instance == null)
-            {
-                _instance = FindObjectOfType<Kotak1>();
-            }
-
-            return _instance;
-        }
-    }
-
-    public UnityAction OnKotakHit = delegate { };
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
